@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg?style=for-the-badge)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078d4.svg?style=for-the-badge&logo=windows)](https://github.com/RaffiDevYT/trevix-explorer-releases/releases/latest)
 
-[🌐 Official Website](https://trevix.raffistudios.com) • [📋 Release Notes](https://github.com/RaffiDevYT/trevix-explorer-releases/releases) • [🐞 Report Issue](https://github.com/RaffiDevYT/trevix-landing-page/issues)
+[🌐 Official Website](https://trevix-explorer.vercel.app/) • [📋 Release Notes](https://github.com/RaffiDevYT/trevix-explorer-releases/releases) • [🐞 Report Issue](https://github.com/RaffiDevYT/trevix-landing-page/issues)
 
 ---
 
@@ -72,7 +72,7 @@ This distribution repository is licensed under the [MIT License](LICENSE).
 
 ## 🔗 Official Links
 
-- **Landing Page**: [https://trevix.raffistudios.com](https://trevix.raffistudios.com)
+- **Landing Page**: [https://trevix-explorer.vercel.app/](https://trevix-explorer.vercel.app/)
 - **Organization**: [Raffi Studios](https://github.com/RaffiDevYT)
 - **Community & Issues**: [GitHub Discussions & Issue Tracker](https://github.com/RaffiDevYT/trevix-landing-page/issues)
 
