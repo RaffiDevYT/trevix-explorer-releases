@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Trevix Explorer Releases
+# ⚡ Trevix Explorer
 
 **The standalone desktop test automation & E2E recording studio.**
 
@@ -8,7 +8,10 @@
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-blue.svg?style=flat-square)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078d4.svg?style=flat-square&logo=windows)](https://github.com/RaffiDevYT/trevix-explorer-releases/releases/latest)
 
-[🌐 Official Website](https://trevix-explorer.vercel.app/) • [📖 Manual Book](MANUAL_BOOK.md) • [📋 Changelog](CHANGELOG.md) • [🐞 Report Issue](https://github.com/RaffiDevYT/trevix-landing-page/issues)
+[🌐 Official Website](https://trevix.cnplus.id/) • [📋 Changelog](CHANGELOG.md) • [🐞 Report Issue](https://github.com/RaffiDevYT/trevix-landing-page/issues)
+
+**Documentation / Manual Book:**  
+[🇮🇩 Bahasa Indonesia (MANUAL_BOOK.md)](MANUAL_BOOK.md) • [🇬🇧 English (MANUAL_BOOK_EN.md)](MANUAL_BOOK_EN.md)
 
 ---
 
@@ -26,32 +29,28 @@ Choose the official standalone binary for your operating system (currently Windo
 
 ---
 
-## 🚀 Perubahan Penting di 1.0.7
+## 📖 About Trevix Explorer
 
-Versi **1.0.7** membawa pembaruan stabilitas dan peningkatan keamanan penting, antara lain:
+**Trevix Explorer** adalah aplikasi desktop visual mandiri yang dirancang khusus untuk kebutuhan **Visual End-to-End (E2E) Test Automation**, **API Testing**, dan **Dokumentasi Matriks QA**.
 
-- **Validasi Kegagalan Eksplisit**: Langkah upload file dan pemilihan dropdown yang tidak ditemukan kini langsung berstatus _Failed_ dengan pesan deskriptif.
-- **Pengamanan Popup & Tab Baru Bawaan**: Proteksi popup otomatis memblokir pembukaan tab jebakan secara default, dengan opsi izin per-langkah (opsi "Buka tab baru").
-- **Deteksi & Penyamaran Nilai Rahasia**: Deteksi pintar kata sandi/token pada skenario dan isolasi variabel lingkungan pada skrip ekspor Playwright.
-- **Peningkatan Presisi Asersi & Polling**: Mode pencocokan URL (`exact`, `contains`, `regex`) serta evaluasi nilai input yang lebih ketat.
-
-Untuk detail lengkap dan catatan migrasi skenario lama, silakan baca [CHANGELOG.md](CHANGELOG.md).
+Aplikasi ini memungkinkan QA Engineer, Tester, dan Developer untuk merekam interaksi browser tanpa menulis kode, mengelola langkah pengujian secara visual, melakukan _debugging_ eksekusi secara langsung, menguji API REST dengan mock server, serta menghasilkan laporan Excel atau HTML profesional secara instan.
 
 ---
 
-## ⚡ Core Capabilities
+## ⚡ Core Features & Capabilities
 
-- **Deep Multi-Frame Recording**: Record multi-step user journeys inside nested iframes and Shadow DOM trees without extra configuration.
-- **Smart Self-Healing**: when a form rejects duplicate data, Trevix Explorer generates fresh unique values, refills the fields, and resubmits automatically. You can turn it off for negative testing.
-- **Visual Scenario Matrix**: Generate a test scenario matrix from your steps and export it to Excel and standalone HTML reports.
-- **Zero Cloud Lock-in**: 100% offline-first architecture. All test definitions, credentials, and artifacts stay strictly on your local machine.
-- **Multi-Framework Exporter**: Export captured journeys directly to clean Playwright (TypeScript/JavaScript).
+- **Interactive Test Debugger**: Kendalikan eksekusi pengujian secara dinamis dengan tombol _Pause_, _Resume_, dan _Step Next_ langsung dari Toolbar Desktop atau _Floating In-Page HUD_ di dalam browser.
+- **Deep Multi-Frame Recording**: Merekam alur pengguna multi-langkah di dalam _nested iframe_, _Shadow DOM trees_, _dropdown_ Select2, dan _Rich Text Editor_ tanpa konfigurasi tambahan.
+- **Smart Self-Healing & LocatorResolver**: Menyelesaikan elemen secara otomatis di dalam modal aktif, menangani UUID dinamis, memperbaiki selector yang rusak, serta mengisi ulang data formulir unik saat terjadi penolakan data ganda.
+- **Visual Scenario Matrix & Reports**: Menghasilkan matriks skenario pengujian terstruktur dan mengekspornya langsung ke Microsoft Excel (`.xlsx`) ber-styling rapi atau laporan HTML interaktif mandiri.
+- **API Studio & Collection Runner**: Dukungan penuh metode HTTP, variabel lingkungan, _mock server_, eksekusi koleksi otomatis, serta dukungan _body request_ untuk `x-www-form-urlencoded` dan `form-data`.
+- **Zero Cloud Lock-in**: Arsitektur _100% offline-first_. Seluruh definisi pengujian, kredensial, dan artefak tersimpan secara ketat di perangkat lokal Anda.
 
 ---
 
 ## 🛡️ Security & Integrity Verification
 
-Untuk memastikan keaslian dan integritas berkas unduhan, lakukan verifikasi checksum SHA-256 sebelum menjalankan installer:
+To ensure the authenticity and integrity of downloaded binaries, verify the SHA-256 checksum before running the installer:
 
 ### PowerShell (Windows)
 
@@ -65,22 +64,22 @@ Get-FileHash .\trevix-explorer-*-setup.exe -Algorithm SHA256
 certutil -hashfile trevix-explorer-*-setup.exe SHA256
 ```
 
-Bandingkan nilai hash yang dihasilkan dengan berkas SHA256SUMS.txt pada [halaman rilis](https://github.com/RaffiDevYT/trevix-explorer-releases/releases).
+Compare the resulting hash value with the `SHA256SUMS.txt` file on the [Releases page](https://github.com/RaffiDevYT/trevix-explorer-releases/releases).
 
 ---
 
-## ⚠️ Peringatan Windows SmartScreen
+## ⚠️ Windows SmartScreen Warning
 
-Karena installer Trevix Explorer belum memiliki sertifikat tanda tangan digital berbayar (_digitally signed_), Windows Defender SmartScreen mungkin akan menampilkan dialog peringatan:
+Because the Trevix Explorer installer does not yet feature a paid digital code-signing certificate, Windows Defender SmartScreen may display a warning dialog:
 
 > **"Windows protected your PC"**  
 > _Microsoft Defender SmartScreen prevented an unrecognized app from starting._
 
-### Cara Melanjutkan Instalasi:
+### How to Proceed with Installation:
 
-1. Pastikan Anda telah melakukan **verifikasi checksum SHA-256** (lihat bagian verifikasi di atas) sesuai dengan berkas SHA256SUMS.txt pada halaman rilis.
-2. Pada jendela dialog SmartScreen, klik tautan teks **"More info"**.
-3. Klik tombol **"Run anyway"** untuk memulai instalasi.
+1. Ensure you have performed the **SHA-256 checksum verification** against `SHA256SUMS.txt` from the release page.
+2. On the SmartScreen popup dialog, click the **"More info"** text link.
+3. Click the **"Run anyway"** button to start the installation wizard.
 
 ---
 
@@ -101,14 +100,15 @@ Trevix Explorer is proprietary software. Please see the [LICENSE](LICENSE) file 
 
 ## 🔗 Official Links & Documentation
 
-- **Landing Page**: [https://trevix-explorer.vercel.app/](https://trevix-explorer.vercel.app/)
-- **Manual Book**: [MANUAL_BOOK.md](MANUAL_BOOK.md)
+- **Landing Page**: [https://trevix.cnplus.id/](https://trevix.cnplus.id/)
+- **Manual Book (ID)**: [MANUAL_BOOK.md](MANUAL_BOOK.md)
+- **Manual Book (EN)**: [MANUAL_BOOK_EN.md](MANUAL_BOOK_EN.md)
 - **Changelog**: [CHANGELOG.md](CHANGELOG.md)
-- **Organization**: [Raffi Studio](https://github.com/RaffiDevYT)
+- **Developer**: [Rafi Athallah](https://github.com/RaffiDevYT)
 - **Community & Issues**: [GitHub Discussions & Issue Tracker](https://github.com/RaffiDevYT/trevix-landing-page/issues)
 
 <br />
 
 <div align="center">
-  <sub>© 2026 Raffi Studio. All rights reserved. Trevix Explorer is developed by Raffi Studio.</sub>
+  <sub>© 2026 Trevix Explorer. All rights reserved. Trevix Explorer is developed by Rafi Athallah.</sub>
 </div>
